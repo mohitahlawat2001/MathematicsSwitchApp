@@ -1,61 +1,89 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f1f1f1;
-  }
-  
-  #input-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    gap: 10px;
-    margin-top: 30px;
-  }
-  
-  #inner-container {
-    width: 1000px;
-    border-radius: 5px;
-    padding: 20px;
-  }
-  
-  #main-input {
-    width: 100%;
-    font-size: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    outline: none;
-  }
-  
-  #calculate {
-    width: 100%;
-    font-size: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    outline: none;
-    margin-top: 10px;
-    cursor: pointer;
-    color: black;
-    margin-top: 20px;
-  }
-  
-  #operator {
-    font-size: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    outline: none;
-    appearance: none;
-  }
-  
-  #output {
-    margin-top: 10px;
-  }
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+
+#input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+#inner-container {
+  width: 1000px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+#main-input {
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+#calculate {
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-top: 10px;
+  cursor: pointer;
+  color: black;
+  margin-top: 20px;
+}
+
+#operator {
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  appearance: none;
+}
+
+#output {
+  margin-top: 10px;
+}
+
+#virtual-numpad {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.numpad-btn {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Style for the Calculate button */
+#calculate {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
