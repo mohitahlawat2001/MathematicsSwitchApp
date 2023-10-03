@@ -1,22 +1,45 @@
-# MathematicsSwitchApp
-The user can input a list of numbers in any order, separated by a comma, into the web application. After inputting their numbers, the user can select which type of statistics they would like to calculate from their list. To calculate the desired statistics, the application utilizes a Switch Statement to determine which formula to apply to the list of numbers.
+# MathsSwitchApp
 
-For this project, we have decided not to use any framework. Instead, we will be using VanillaJS to interact with the Document Object Model by utilizing the document keyword. Let's begin!
+A simple web application for performing mathematical calculations on a list of numbers. Choose from operations like sum, average, min, max, median, mode, and range.
 
-For this project, we'll use an input and a button element. The external CSS and JavaScript will be written to support the application.
+## Features
+- Perform various mathematical calculations on a list of numbers.
+- Choose from a range of operations like sum, average, min, max, median, mode, and range.
+- User-friendly web interface with a dropdown for selecting the operation.
 
-- ### Use Switch Statements to apply the appropriate formula
-- ### Obtain values from the HTML DOM
-- ### Apply the “default” use case on the Switch Statements
+## Usage
+1. Enter numbers separated by commas into the input field (e.g., "1, 2, 3").
+2. Select the desired mathematical operation from the dropdown menu.
+3. Click the "Calculate" button to see the result displayed below.
 
+## Installation
+1. Clone this repository to your local machine:
 
-This quest involves creating mathematical functions such as sum, average, min, max, median, mode, and range. As part of the deliverable requirement, you are expected to code the "mode" function yourself.
+   ```bash
+   git clone https://github.com/your-username/fun-with-numbers.git
+   ```
 
-Here are the definitions of the mathematical functions:
-- Sum: the total addition of all values in a list
-- Average: the sum of values in a list divided by the total number of items in the list
-- Min: the smallest value in a list of numbers
-- Max: the largest value in a list of numbers
-- Median: the middle value of a data set when arranged in order from least to greatest
-- Mode: the value or values that appear most frequently in a data set
-- Range: a measure of the spread or dispersion of a data set, calculated as the difference between the maximum and minimum values in the data set.
+2. Open the project folder:
+
+   ```bash
+   cd fun-with-numbers
+   ```
+
+3. Open `index.html` in your web browser or host the project on a web server.
+
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+
+## Contributing
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your fork.
+5. Submit a pull request to the main repository.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
