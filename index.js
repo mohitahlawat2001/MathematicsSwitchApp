@@ -1,119 +1,113 @@
 document.getElementById('calculate').addEventListener('click', function () {
-    var list = document.getElementById('main-input').value;
-    list = list.replaceAll(' ', '');
-    list = list.split(',');
-  
-    list = list.map((item, index) => {
-      return parseInt(item);
-    })
-  
+    var input = document.getElementById('main-input').value;
+    var list = input.split(',').map(function(item) {
+        return parseInt(item.trim());
+    });
+
     var operator = document.getElementById('operator').value;
-  
-    switch (operator) { 
+    var result;
+
+    switch (operator) {
         case 'sum':
-            var sum = 0;
-            for (var i = 0; i < list.length; i++) {
-              sum += parseInt(list[i]);
-            }
-            document.getElementById('output').innerHTML = sum;
+            result = list.reduce(function(acc, val) {
+                return acc + val;
+            }, 0);
             break;
-        
+
         case 'average':
-            var sum = 0;
-            for (var i = 0; i < list.length; i++) {
-              sum += parseInt(list[i]);
-            }
-            document.getElementById('output').innerHTML = sum / list.length;
+            result = list.reduce(function(acc, val) {
+                return acc + val;
+            }, 0) / list.length;
             break;
-        
+
         case 'min':
-            var min = list[0];
-            for (var i = 0; i < list.length; i++) {
-              if (list[i] < min) {
-                min = list[i];
-              }
-            }
-            document.getElementById('output').innerHTML = min;
+            result = Math.min(...list);
             break;
-        
+
         case 'max':
-            var max = list[0];
-            for (var i = 0; i < list.length; i++) {
-              if (list[i] > max) {
-                max = list[i];
-              }
-            }
-            document.getElementById('output').innerHTML = max;
+            result = Math.max(...list);
             break;
-        
+
         case 'median':
-            // sort list
-            for (var i = 0; i < list.length; i++) {
-                for (var j = 0; j < list.length; j++) {
-                if (list[i] < list[j]) {
-                    var temp = list[i];
-                    list[i] = list[j];
-                    list[j] = temp;
-                }
-                }
-            }
-            // get median
-            var median = 0;
-            if (list.length % 2 == 0) {
-                median = (list[list.length / 2] + list[(list.length / 2) - 1]) / 2;
+            list.sort(function(a, b) {
+                return a - b;
+            });
+            var middle = Math.floor(list.length / 2);
+            if (list.length % 2 === 0) {
+                result = (list[middle - 1] + list[middle]) / 2;
             } else {
-                median = list[Math.floor(list.length / 2)];
+                result = list[middle];
             }
-            document.getElementById('output').innerHTML = median;
             break;
-        
+
         case 'mode':
-        // sort list
-            for (var i = 0; i < list.length; i++) {
-                for (var j = 0; j < list.length; j++) {
-                    if (list[i] < list[j]) {
-                        var temp = list[i];
-                        list[i] = list[j];
-                        list[j] = temp;
-                    }
-                }
-            }
-        // get mode
-            var mode = 0;
-            var count = 0;
+            var modeMap = {};
             var maxCount = 0;
-            for (var i = 0; i < list.length; i++) {
-                if (list[i] == list[i + 1]) {
-                    count++;
-                } else {
-                    count = 0;
+            list.forEach(function(num) {
+                if (!modeMap[num]) modeMap[num] = 1;
+                else modeMap[num]++;
+                if (modeMap[num] > maxCount) {
+                    maxCount = modeMap[num];
+                    result = num;
                 }
-                if (count > maxCount) {
-                    maxCount = count;
-                    mode = list[i];
-                }
-            }
-            document.getElementById('output').innerHTML = mode;
+            });
             break;
-           
+
         case 'range':
-            var min = list[0];
-            var max = list[0];
-            for (var i = 0; i < list.length; i++) {
-                if (list[i] < min) {
-                min = list[i];
-                }
-                if (list[i] > max) {
-                max = list[i];
-                }
+            result = Math.max(...list) - Math.min(...list);
+            break;
+
+        case 'product':
+            result = list.reduce(function(acc, val) {
+                return acc * val;
+            }, 1);
+            break;
+
+        case 'factorial':
+            if (list.length === 1) {
+                result = factorial(list[0]);
+            } else {
+                result = 'Factorial operation requires a single number.';
             }
-            document.getElementById('output').innerHTML = max - min;
             break;
-        
+
+        case 'gcd':
+            result = gcd(list);
+            break;
+
         default:
-            document.getElementById('output').innerHTML = 'Invalid operator';
+            result = 'Invalid operator';
             break;
-        
     }
-    
-  })
+
+    document.getElementById('output').innerHTML = result;
+});
+
+document.getElementById('clear').addEventListener('click', function () {
+    document.getElementById('main-input').value = '';
+    document.getElementById('operator').value = 'none';
+    document.getElementById('output').innerHTML = '';
+});
+
+function factorial(num) {
+    if (num === 0 || num === 1) return 1;
+    for (var i = num - 1; i >= 1; i--) {
+        num *= i;
+    }
+    return num;
+}
+
+function gcd(arr) {
+    if (arr.length < 2) return 'GCD operation requires at least two numbers.';
+    var x = Math.abs(arr[0]);
+    var y = Math.abs(arr[1]);
+    while(y) {
+        var t = y;
+        y = x % y;
+        x = t;
+    }
+    for (var i = 2; i < arr.length; i++) {
+        x = gcd([x, arr[i]]);
+    }
+    return x;
+}

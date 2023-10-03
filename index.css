@@ -1,61 +1,74 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f1f1f1;
-  }
-  
-  #input-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    gap: 10px;
-    margin-top: 30px;
-  }
-  
-  #inner-container {
-    width: 1000px;
-    border-radius: 5px;
-    padding: 20px;
-  }
-  
-  #main-input {
-    width: 100%;
-    font-size: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    outline: none;
-  }
-  
-  #calculate {
-    width: 100%;
-    font-size: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    outline: none;
-    margin-top: 10px;
-    cursor: pointer;
-    color: black;
-    margin-top: 20px;
-  }
-  
-  #operator {
-    font-size: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    outline: none;
-    appearance: none;
-  }
-  
-  #output {
-    margin-top: 10px;
-  }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.calculator {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.input-container select, .input-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.input-container select {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-container input {
+  flex: 2;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.calculate-button {
+  background-color: #007bff;
+  margin-right: 10px;
+}
+
+.clear-button {
+  background-color: #dc3545;
+}
+
+.output {
+  margin-top: 20px;
+  font-size: 24px;
+}

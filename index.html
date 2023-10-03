@@ -10,23 +10,29 @@
   <title>Switch Case Practice</title>
 </head>
 <body>
-  <div id="inner-container">
-    <h1>Fun with Numbers!</h1>
-    <div id="input-container">
-      <input type="text" id="main-input" placeholder="Enter a list of numbers separated by commas">
-      <select id="operator">
-        <option value="sum">Sum</option>
-        <option value="average">Average</option>
-        <option value="min">Min</option>
-        <option value="max">Max</option>
-        <option value="median">Median</option>
-        <option value="mode">Mode</option>
-        <option value="range">Range</option>
-        <option value="none">None</option>
-      </select>
+  <div class="calculator">
+    <h1>Fun with Numbers Calculator</h1>
+    <div class="input-container">
+        <select id="operator">
+            <option value="sum">Sum</option>
+            <option value="average">Average</option>
+            <option value="min">Min</option>
+            <option value="max">Max</option>
+            <option value="median">Median</option>
+            <option value="mode">Mode</option>
+            <option value="range">Range</option>
+            <option value="product">Product</option>ṭ
+            <option value="factorial">Factorial</option>
+            <option value="gcd">GCD</option>
+            <option value="none">None</option>
+        </select>
+        <input type="text" id="main-input" placeholder="Enter numbers seperated with comma's">
     </div>
-    <p id="output"></p>
-    <button id="calculate">Calculate</button>
-  </div>
+    <div class="button-container">
+        <button class="calculate-button" id="calculate">Calculate</button>
+        <button class="clear-button" id="clear">Clear</button>
+    </div>
+    <p class="output" id="output"></p>
+</div>
 </body>
 </html>
