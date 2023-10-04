@@ -9,6 +9,8 @@ For this project, we'll use an input and a button element. The external CSS and 
 - ### Obtain values from the HTML DOM
 - ### Apply the “default” use case on the Switch Statements
 
+## Demo App
+![Screenshot (209)](https://github.com/Upendra2003/MathematicsSwitchApp/assets/96371563/3ba3214e-1264-4987-8dda-cfe15199b215)
 
 This quest involves creating mathematical functions such as sum, average, min, max, median, mode, and range. As part of the deliverable requirement, you are expected to code the "mode" function yourself.
 
