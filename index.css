@@ -1,37 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .logo h3{
+    font-family: 'Lilita One', cursive;
+    font-stretch:ultra-expanded;
+    font-size: 25px;
+    margin: 30px;
+  }
+
+  h1,h3{
+    color: white;
+    margin-top: 15px;
   }
   
   body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f1f1f1;
+    background-image: url('assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .calculator {
+    width: 400px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #DCDCDC;
+    backdrop-filter: blur(11px);
+    padding: 50px 30px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgb(40,113,85, 0.4);
+  }
+
+  button{
+    font-size: 20px;
+    padding: 17px;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #3085C3;
+    color: white;
   }
   
   #input-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     flex-direction: row;
     gap: 10px;
     margin-top: 30px;
   }
   
   #inner-container {
-    width: 1000px;
+    width: 500px;
     border-radius: 5px;
     padding: 20px;
+    margin-left: -250px;
   }
   
   #main-input {
     width: 100%;
-    font-size: 20px;
+    font-size: 15px;
     padding: 10px;
+    border-radius: 5px;
     border: 1px solid #ccc;
     outline: none;
   }
@@ -44,18 +84,28 @@
     outline: none;
     margin-top: 10px;
     cursor: pointer;
-    color: black;
+    color: white;
     margin-top: 20px;
   }
   
   #operator {
-    font-size: 20px;
+    font-size: 15px;
     padding: 10px;
+    border-radius: 5px;
     border: 1px solid #ccc;
     outline: none;
     appearance: none;
+    cursor: pointer;
   }
   
   #output {
+    width: 100%;
+    font-size: 15px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid white;
+    outline: none;
+    color: white;
     margin-top: 10px;
   }
