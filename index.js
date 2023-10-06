@@ -88,7 +88,31 @@ document.getElementById('calculate').addEventListener('click', function () {
             }
             document.getElementById('output').innerHTML = gcd;
             break;
-                
+        case 'ascending':
+            for (var i = 0; i < list.length; i++) {
+                for (var j = 0; j < list.length; j++) {
+                if (list[i] < list[j]) {
+                    var temp = list[i];
+                    list[i] = list[j];
+                    list[j] = temp;
+                }
+                }
+            }
+            
+            document.getElementById('output').innerHTML = list;
+            break;
+        case 'descending':
+            for (var i = 0; i < list.length; i++) {
+                for (var j = 0; j < list.length; j++) {
+                if (list[i] > list[j]) {
+                    var temp = list[i];
+                    list[i] = list[j];
+                    list[j] = temp;
+                }
+                }
+            }
+            document.getElementById('output').innerHTML = list;
+            break;        
         case 'median':
             // sort list
             for (var i = 0; i < list.length; i++) {
