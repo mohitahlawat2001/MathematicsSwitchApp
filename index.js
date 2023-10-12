@@ -176,7 +176,21 @@ document.getElementById('calculate').addEventListener('click', function () {
             }
             document.getElementById('output').innerHTML = max - min;
             break;
-        
+        case 'factorial':
+            var ans =1;
+            for (var i = 1; i <= list[0]; i++) {
+                ans=ans*i;
+            }
+            document.getElementById('output').innerHTML = ans;
+            break;
+        case 'sqroot':
+            var ans = Math.sqrt(list[0]);
+            document.getElementById('output').innerHTML = ans;
+            break;
+        case 'curoot':
+            var ans = Math.cbrt(list[0]);
+            document.getElementById('output').innerHTML = ans;
+            break;
         default:
             document.getElementById('output').innerHTML = 'Invalid operator';
             break;
